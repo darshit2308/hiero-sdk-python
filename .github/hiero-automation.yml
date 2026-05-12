@@ -1,0 +1,17 @@
+repository:
+  owner: hiero-ledger
+  name: hiero-sdk-python
+
+labels:
+  reviewQueue:
+    juniorCommitter: "queue:junior-committer"
+    committers: "queue:committers"
+    maintainers: "queue:maintainers"
+    readyToMerge: "status: ready-to-merge"
+    communityReview: "open to community review"
+
+reviewSync:
+  enabled: true
+  dryRunDefault: true
+  includeDraftPullRequests: false
+  rateLimitFloor: 200
