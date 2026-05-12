@@ -27,4 +27,4 @@ jobs:
         with:
           config-path: .github/hiero-automation.yml
           github-token: ${{ github.token }}
-          dry-run: true
+          dry-run: false
