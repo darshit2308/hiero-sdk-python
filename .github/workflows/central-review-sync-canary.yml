@@ -1,0 +1,30 @@
+name: Central Review Sync Canary
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+  checks: read
+
+jobs:
+  review-sync-canary:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run central review sync (dry-run)
+        uses: darshit2308/sdk-automations/actions/review-sync@main
+        with:
+          config-path: .github/hiero-automation.yml
+          github-token: ${{ github.token }}
+          dry-run: true
